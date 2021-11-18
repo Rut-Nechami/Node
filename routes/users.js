@@ -8,7 +8,7 @@ const generateAccessToken = (username) => {
   return jwt.sign({ username }, TOKEN_SECRET);
 };
 /* GET users listing. */
-router.get('/signIn/:userName/:password', user.signIn);
+ router.get('/signIn/:userName/:password', user.signIn);
  router.post('/createUser', user.createUser);
  router.get('/getAllUsers', user.getAllUsers);
 

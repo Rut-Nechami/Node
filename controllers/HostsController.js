@@ -6,15 +6,17 @@ const app = express();
 
 const createHost = async (req, res) => {
     try {
+        const {userName,password} = req.params;
+        const{tel,address,email,SpecialCustoms,OccupationsFather,OccupationsMother,MaximumGuests}=req.body;
         console.log("req", req.body);
-        const newUser= new Users({userName:req.params.userName,password:req.params.password,kind:2});
+        const newUser= new Users({userName,password,kind:2});
         await newUser.save();
         console.log(newUser);
-        const newHost=new Host({UserId:newUser._id, });
+        const newHost=new Host({UserId:newUser._id,tel,address,email,SpecialCustoms,OccupationsFather,OccupationsMother,MaximumGuests});
         await newHost.save();
         res.send(newHost);
         res.send(newUser);
-        res.status(200).json(newUser);
+        res.status(200).json(newHost);
     }
 
     catch (error) {

@@ -4,5 +4,6 @@ const institution = require('../controllers/institutionsController');
 
 //router.post('/createInstitution/:userName/:password/:kind/:tel/:address/:email', institution.createInstitution);
 router.post('/createInstitution/:userName/:password', institution.createInstitution);
+//router.post('/createInstitution/', institution.createInstitution);
 
 module.exports = router;

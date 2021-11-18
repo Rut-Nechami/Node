@@ -24,7 +24,7 @@ const HostSchema = mongoose.Schema({
 	OccupationsFather:{
        type:String
 	},
-	OccupationsFather:{
+	OccupationsMother:{
         type:String
 	},
 	MaximumGuests:{
